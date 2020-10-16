@@ -19,11 +19,11 @@ def Startmasscan():
 	for line in ranges:
 		p1 = subprocess.Popen(['masscan', "-p" ,  massp , "--rate" , massrt , "--range" , line , "-oG" , "result.json"], stdout=subprocess.PIPE)
 		servers = []
-		with open('result.json', 'r') as f:
-			texta = json.loads(f.read())
-			print(texta)
-			servers.append(texta['ip'])
-		print(servers)
+	with open('result.json', 'r') as f:
+		texta = json.loads(f.read())
+		print(texta)
+		servers.append(texta['ip'])
+	print(servers)
 	print('masscan finished .....')
 
 def cleanGui():
